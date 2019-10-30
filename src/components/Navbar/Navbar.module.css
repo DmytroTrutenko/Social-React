@@ -5,7 +5,19 @@
 .item{
   color: #fff;
   }
+  
 .active{
   
+}
+
+.nav a{
+  color: #eee;
+  text-decoration: none;
+}
+
+
+.nav a:hover{
+  color: #D6D6D6;
+  text-decoration: underline;
 }
   
