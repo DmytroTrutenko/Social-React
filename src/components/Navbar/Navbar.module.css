@@ -1,23 +1,25 @@
 .nav{
     grid-area: n;
-    background-color: #295f48;
+    background-color: #004444;
+    padding: 20px;
+    height: 100vh;
   }
-.item{
-  color: #fff;
-  }
-  
-.active{
-  
-}
 
+.item{
+  color: #eee;
+  }
+  
 .nav a{
   color: #eee;
   text-decoration: none;
 }
 
+.nav a.active{
+  color: #70ccf9;
+  
+}
 
 .nav a:hover{
-  color: #D6D6D6;
-  text-decoration: underline;
+  color: #70ccf9;
 }
   

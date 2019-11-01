@@ -2,7 +2,7 @@
 .header{
     display: flex;
     grid-area: h;
-    background-color: #295f48;
+    background-color: #004444;
   }
   .header img{
     height: 55px;
@@ -14,5 +14,5 @@
     font-size: 38px;
     font-weight: 700;
     letter-spacing: 3px;
-    text-shadow: 3px 3px 3px	#18392b;
+    text-shadow: 3px 3px 3px	#003333;
   }

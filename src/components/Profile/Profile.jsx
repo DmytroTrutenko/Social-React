@@ -1,16 +1,12 @@
 import React from 'react';
 import classes from './Profile.module.css';
-import MyPosts from './MyPosts/MyPosts'
+import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
     return (
       <div>
-        <div>
-          <img className={classes.imgHead} src='https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'></img>
-        </div>
-        <div>
-          ava+descr
-        </div>
+        <ProfileInfo/>
         <MyPosts/>
       </div>
     );
