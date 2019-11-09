@@ -1,11 +1,14 @@
 import React from 'react';
-import classes from  './Header.module.css';
+import classes from './Header.module.css';
+import img from '../../img/logo.svg';
 
 const Header = () => {
     return (
-        <header className = {classes.header}>
-           <img src = 'https://animoto.com/static/logo-f7bad0df2a4af8688773dca5ee0b1ed6.png'/>
-           <span>React Social</span>
+        <header className={classes.header}>
+            <div className={classes.head__img}>
+                <img src={img} alt="logo" />
+            </div>
+            <span>Reactive Network</span>
         </header>
     );
 }

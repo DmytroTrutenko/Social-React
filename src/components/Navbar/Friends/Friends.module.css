@@ -1,10 +1,12 @@
-.item {
-  color: #004444;
+.friend a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.ava {
-  width: 50px;
-  height: 50px;
+.friend img {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-bottom: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
@@ -12,13 +14,9 @@
 }
 
 
-.ava:hover {
-  width: 60px;
-  height: 60px;
+.friend img:hover {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.6);
-}
-
-.like {
-  width: 25px;
 }

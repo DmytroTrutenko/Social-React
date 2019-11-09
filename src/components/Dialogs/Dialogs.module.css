@@ -7,28 +7,10 @@
     padding: 10px;
 }
 
-.dialogs .dialogsItems .dialog {
-    padding: 10px;
-}
-
 .dialogs .messages {
     padding: 10px;
 }
 
 .dialogs .messages .message {
     padding: 10px;
-}
-
-.dialogs a {
-    color: #003333;
-    text-decoration: none;
-}
-
-.dialogs a.active {
-    color: #70ccf9;
-
-}
-
-.dialogs a:hover {
-    color: #70ccf9;
 }

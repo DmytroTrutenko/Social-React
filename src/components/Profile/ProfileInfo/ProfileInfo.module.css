@@ -1,6 +1,18 @@
-.imgHead {
-  width: 100%;
+.profile_info{
+  position: relative;
+  padding-top: 200px;
 }
+
+.profile_info_bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 .descr{
   padding: 10px;
 }

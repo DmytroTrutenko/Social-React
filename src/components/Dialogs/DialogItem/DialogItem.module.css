@@ -1,0 +1,46 @@
+.dialog {
+    display: flex;
+    align-items: center;
+}
+.dialog img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s;
+  }
+  
+  
+  .dialog a:hover img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.6);
+  }
+
+
+  
+.dialog a {
+    display: flex;
+    align-items: flex-end;
+    color: #003333;
+    text-decoration: none;
+    min-height: 60px;
+    margin-bottom:10px;
+}
+
+.dialog a.active {
+    color: #70ccf9;
+}
+
+.dialog a.active img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.6);
+}
+
+/* .dialog a:hover {
+    color: #70ccf9;
+} */
