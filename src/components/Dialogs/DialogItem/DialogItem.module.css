@@ -1,46 +1,48 @@
 .dialog {
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
+
 .dialog img {
     margin-right: 10px;
+    margin-left: 10px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    padding: 1px;
+    background-color: #eee;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
     transition: all 0.3s;
-  }
-  
-  
-  .dialog a:hover img{
+}
+
+
+.dialog a:hover img {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.6);
-  }
+}
 
+.dialog a:hover {
+    cursor: pointer;
+    background-color: #282828;
+}
 
-  
 .dialog a {
     display: flex;
-    align-items: flex-end;
-    color: #003333;
+    align-items: center;
+    color: #eee;
     text-decoration: none;
     min-height: 60px;
-    margin-bottom:10px;
+    padding: 5px 0;
+    width: 100%;
+    transition: all 0.3s;
 }
 
 .dialog a.active {
-    color: #70ccf9;
+    background-color: #282828;
 }
 
-.dialog a.active img{
+.dialog a.active img {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.6);
 }
-
-/* .dialog a:hover {
-    color: #70ccf9;
-} */

@@ -17,11 +17,11 @@
 .item .avka {
   display: flex;
   align-items: flex-end;
-  color: #003333;
   text-decoration: none;
   min-height: 60px;
   min-width: 300px;
   align-items: center;
+  color: #202020;
 }
 
 .item .like img {

@@ -1,7 +1,7 @@
 .header {
   display: flex;
   grid-area: h;
-  background-color: #004444;
+  background-color: #202020;
 }
 
 .header .head__img {

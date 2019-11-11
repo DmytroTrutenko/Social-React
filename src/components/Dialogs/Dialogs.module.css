@@ -1,16 +1,13 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    padding: 10px;
+    gap: 10px;
 }
 
 .dialogs .dialogsItems {
-    padding: 10px;
+    background-color: #525252;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.dialogs .messages {
-    padding: 10px;
-}
-
-.dialogs .messages .message {
-    padding: 10px;
-}

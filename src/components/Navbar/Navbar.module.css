@@ -1,11 +1,10 @@
 .nav {
   grid-area: n;
-  background-color: #004444;
+  background-color: #202020;
   padding: 10px;
   margin: 0;
-  height: 100%;
+  list-style: none;
 }
-
 
 .item {
   color: #eee;
@@ -17,12 +16,12 @@
 }
 
 .nav a.active {
-  color: #70ccf9;
+  color: #aaaa;
 
 }
 
 .nav a:hover {
-  color: #70ccf9;
+  color: #aaaa;
 }
 
 .title {
@@ -47,5 +46,4 @@
   padding: 0;
   width: 100%;
   min-height: 87px;
-  
 }

@@ -3,6 +3,10 @@ import classes from './Navbar.module.css';
 import Friends from './Friends/Friends';
 import { NavLink } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+
+
 const Navbar = (props) => {
 
   let friednsElements = props.state.friends.map(f => <Friends src={f.src} name={f.name} />);
@@ -24,6 +28,9 @@ const Navbar = (props) => {
       <li className={classes.item}>
         <NavLink to='/settings' activeClassName={classes.active}>Settings</NavLink>
       </li>
+      <FontAwesomeIcon
+        icon={faThumbsUp}
+        style={{ color: '#fff' }} />
       <span className={classes.title}>Friends</span>
       <div className={classes.item__friends}>
         <ul>

@@ -1,10 +1,9 @@
-.profile_info{
+.profile_info {
   position: relative;
-  padding: 200px 10px 10px 10px;
-  color: #003333;
+  padding: 150px 10px 10px 10px;
 }
 
-.profile_info_bg{
+.profile_info_bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -12,25 +11,33 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  z-index: 1;
 }
 
-.main_info{
+.main_info {
+  position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+
 }
 
-
-.main_info h2{
-  margin: 5px;
+.main_info img {
+  display: block;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  padding: 5px;
+  background-color: #fff;
 }
 
-
-.main_info .avatar img{
-  max-width: 200px;
+.profile_data {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  max-height: 190px;
+  overflow: hidden;
 }
 
-.desc{
-  max-width: 400px;
+.main_info h2 {
+  margin: 0 0 5px 0;
 }
-
