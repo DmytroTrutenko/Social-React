@@ -5,10 +5,12 @@ const Post = (props) => {
   return (
 
     <div className={classes.item}>
-      <img className={classes.ava} src={props.src} alt='ava' />
-      <span>{props.message}</span>
-      <div>
-        <img className={classes.like} src='https://www.freepngimg.com/thumb/facebook/24958-5-facebook-like-image.png' alt = 'like'/> 
+      <a href="#" className={classes.avka}>
+        <img src={props.src} alt='ava' />
+        {props.message}
+      </a>
+      <div className={classes.like}>
+        <img src='https://www.freepngimg.com/thumb/facebook/24958-5-facebook-like-image.png' alt='like' />
         <span>{props.likeCounts}</span>
       </div>
     </div>

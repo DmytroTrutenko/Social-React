@@ -1,6 +1,7 @@
 .profile_info{
   position: relative;
-  padding-top: 200px;
+  padding: 200px 10px 10px 10px;
+  color: #003333;
 }
 
 .profile_info_bg{
@@ -11,8 +12,25 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+  z-index: 1;
 }
 
-.descr{
-  padding: 10px;
+.main_info{
+  display: flex;
+  align-items: flex-end;
 }
+
+
+.main_info h2{
+  margin: 5px;
+}
+
+
+.main_info .avatar img{
+  max-width: 200px;
+}
+
+.desc{
+  max-width: 400px;
+}
+
