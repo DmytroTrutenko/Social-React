@@ -26,7 +26,7 @@
   height: 200px;
   object-fit: cover;
   padding: 5px;
-  background-color: #fff;
+  background-color: #eee;
 }
 
 .profile_data {
@@ -40,4 +40,12 @@
 
 .main_info h2 {
   margin: 0 0 5px 0;
+}
+
+.profile_data p {
+  color: #eee;
+  background-color: #525252;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
 }

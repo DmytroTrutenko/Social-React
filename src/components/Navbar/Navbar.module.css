@@ -8,9 +8,11 @@
 
 .item {
   color: #eee;
+  padding: 10px 0;
 }
 
 .nav a {
+  padding: 5px 0;
   color: #eee;
   text-decoration: none;
 }
@@ -47,3 +49,9 @@
   width: 100%;
   min-height: 87px;
 }
+
+.icons{
+  margin-right: 10px;
+}
+
+

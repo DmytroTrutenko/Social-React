@@ -5,7 +5,7 @@ import classes from './ProfileInfo.module.css';
 const ProfileInfo = (props) => {
   return (
     <div className={classes.profile_info}>
-      <img src="http://www.f-covers.com/cover/japan-cherry-blossoms-and-mount-facebook-cover-timeline-banner-for-fb.jpg"
+      <img src="http://habrastorage.org/files/22c/084/d30/22c084d30a884ed59db3e8385e7e9b29.png"
         className={classes.profile_info_bg} />
       <div className={classes.main_info}>
         <img src="https://sun9-23.userapi.com/c857436/v857436113/83131/YrLqLyoi1Hs.jpg" alt="avatar" />

@@ -1,12 +1,40 @@
-.myPosts{
+.myPosts {
     padding: 10px;
+    
 }
 
-.textarea{
+.textarea {
     margin: 0 10px 0 0;
     resize: none;
+    background-color: #aaa;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    outline: none;
+    font-size: larger;
 }
 
-.posts{
+.posts {
     margin-top: 10px;
+    background-color: #aaa;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    outline: none;
+}
+
+.myPosts button {
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    color: #eee;
+    background: #202020;
+}
+
+.myPosts button:hover {
+    background: #525252;
+    letter-spacing: 1px;
 }

@@ -1,17 +1,17 @@
+.item {
+  color: #202020;
+  padding: 5px 0;
+}
+
 .item .avka img {
-  margin-right: 10px;
+  margin: 10px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
   transition: all 0.3s;
-}
-
-.item .avka img:hover{
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.6);
+  background-color: #eee;
+  padding: 1px;
 }
 
 .item .avka {
@@ -22,6 +22,22 @@
   min-width: 300px;
   align-items: center;
   color: #202020;
+}
+
+.item:hover {
+  background-color: #525252;
+  border-radius: 10px;
+  color: #eee;
+}
+
+.item:hover a {
+  color: #eee;
+}
+
+.item:hover .avka img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
 .item .like img {
