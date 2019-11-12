@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 let state = {
   profilePage: {
     posts: [{
@@ -110,11 +112,12 @@ let state = {
 export let addPost = (postMessage) => {
   let newPost={
     id:6,
-    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9dVzUCkEITKr77hB9QmXOTGqeXm9LuxcYh4rCDXq5GnuvjgnS&s',
+    src: 'https://sun9-23.userapi.com/c857436/v857436113/83131/YrLqLyoi1Hs.jpg',
     message: postMessage,
     likeCounts: 0
   };
   state.profilePage.posts.push(newPost);
+  rerenderEntireTree(state); 
 };
 
 export default state;
