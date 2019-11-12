@@ -33,6 +33,7 @@ let state = {
         likeCounts: 3
       }
     ],
+    newPostText: ''
   },
   dialogsPage: {
     dialogs: [{
@@ -109,15 +110,23 @@ let state = {
   }
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost={
     id:6,
     src: 'https://sun9-23.userapi.com/c857436/v857436113/83131/YrLqLyoi1Hs.jpg',
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likeCounts: 0
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText='';
   rerenderEntireTree(state); 
 };
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state); 
+};
+
+
 
 export default state;
