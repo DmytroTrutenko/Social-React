@@ -3,7 +3,6 @@ import classes from './Friends.module.css';
 
 
 const Friends = (props) => {
-  console.log({ props });
   return (
 
     <li className={classes.friend}>

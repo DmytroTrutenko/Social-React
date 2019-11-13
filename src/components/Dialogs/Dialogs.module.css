@@ -11,3 +11,36 @@
     overflow: hidden;
 }
 
+.dialogs .messages {
+    background-color: #525252;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.messages .textarea {
+    margin: 0 10px 0 0;
+    resize: none;
+    background-color: #aaa;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    outline: none;
+    font-size: larger;
+}
+
+.messages button {
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    color: #eee;
+    background: #202020;
+}
+
+.messages button:hover {
+    background: #000;
+    letter-spacing: 1px;
+}

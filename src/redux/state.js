@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () =>{
+  console.log('state change');
+}
 
 let state = {
   profilePage: {
@@ -35,7 +37,7 @@ let state = {
     ],
     newPostText: ''
   },
-  dialogsPage: {
+  dialogsPage: { 
     dialogs: [{
         id: 1,
         src: 'https://sun9-50.userapi.com/c855424/v855424092/6902e/jPafH--ZKo0.jpg?ava=1',
@@ -88,7 +90,8 @@ let state = {
         id: 5,
         message: 'i wanna be your dog'
       }
-    ]
+    ],
+    newMessageText: ''
   },
   sidebar: {
     friends: [{
@@ -110,7 +113,9 @@ let state = {
   }
 };
 
-export let addPost = () => {
+window.state = state;  //можна смотреть  state в log 
+
+export const addPost = () => {
   let newPost={
     id:6,
     src: 'https://sun9-23.userapi.com/c857436/v857436113/83131/YrLqLyoi1Hs.jpg',
@@ -122,11 +127,30 @@ export let addPost = () => {
   rerenderEntireTree(state); 
 };
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   rerenderEntireTree(state); 
 };
 
+export const addMessage = () => {
+  let newMessage={
+    id:6,
+    message: state.dialogsPage.newMessageText,
+  };
+  state.dialogsPage.messages.push(newMessage);
+  state.dialogsPage.newMessageText='';
+  rerenderEntireTree(state); 
+};
 
+export const updateNewMessageText = (newText) => {
+  state.dialogsPage.newMessageText = newText;
+  rerenderEntireTree(state); 
+};
+
+
+export const subscribe = (observer) => {          //ПАТЕРН => наблюдатель
+  rerenderEntireTree = observer;                  //передача функции из index.js   
+}
 
 export default state;
+
