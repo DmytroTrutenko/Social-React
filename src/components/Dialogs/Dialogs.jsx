@@ -33,9 +33,25 @@ const Dialogs = (props) => {
       <div className={classes.dialogsItems}>
         {dialogsElements}
       </div>
+
       <div className={classes.messages}>
-        {messagesElements}
-        <div className={classes.sendSms}>
+        <div className={classes.msg_head}>
+          <div className={classes.img_cont}>
+            <img src='' alt="ava" />
+          </div>
+          <span className={classes.name}>Name</span>
+        </div>
+
+        <div className={classes.msg_body}>
+          <div className={classes.msg_body_left}>
+          {messagesElements}
+          </div>
+          <div className={classes.msg_body_right}>
+          {messagesElements}
+          </div>
+        </div>
+
+        <div className={classes.msg_bot}>
           <div>
             <textarea
               onChange={onMessageChange}

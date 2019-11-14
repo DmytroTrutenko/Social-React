@@ -7,7 +7,10 @@ const Friends = (props) => {
 
     <li className={classes.friend}>
       <a href="#">
-        <img src={props.src} alt="ava" />
+        <div className={classes.img_cont}>
+          <img src={props.src} alt="ava" />
+          <span className={classes.online_icon}></span>
+        </div>
         {props.name}
       </a>
     </li>

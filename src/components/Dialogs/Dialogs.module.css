@@ -44,3 +44,33 @@
     background: #000;
     letter-spacing: 1px;
 }
+
+.messages img {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 1px;
+    background-color: #eee;
+}
+
+.msg_head{
+    display: flex;
+    padding: 10px;
+    background-color: #454545;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.name {
+    color: #eee;
+    padding-left: 10px;
+}
+
+.msg_body{
+    display: flex;
+    justify-content: space-between;
+}
+
+
