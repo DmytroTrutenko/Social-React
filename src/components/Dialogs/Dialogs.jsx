@@ -23,13 +23,15 @@ const Dialogs = (props) => {
   let newMessageElement = React.createRef();  //ссылка на элемент
 
   let addMessage = () => {
-    props.addMessage();
+    let action={type: 'ADD-MESSAGE'};
+    props.dispatch(action);
   };
 
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    props.updateNewMessageText(text);
-  }
+    let action={type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text};
+    props.dispatch(action);
+  };
 
 
 

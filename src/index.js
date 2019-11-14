@@ -12,12 +12,9 @@ let rerenderEntireTree = (state) =>{
     ReactDOM.render(
             <BrowserRouter>
                  <App 
-                 state ={store.getState()} 
-                 addPost={store.addPost} 
-                 updateNewPostText={store.updateNewPostText}
-                 addMessage={store.addMessage}
-                 updateNewMessageText={store.updateNewMessageText}
-                 />
+                  state ={state} 
+                  dispatch={store.dispatch.bind(store)}
+                 /> 
             </BrowserRouter>, document.getElementById('root'));
 } 
 
@@ -25,5 +22,5 @@ let rerenderEntireTree = (state) =>{
 rerenderEntireTree(store.getState());
 
 store.subscribe(rerenderEntireTree);
-
+ 
 serviceWorker.unregister();

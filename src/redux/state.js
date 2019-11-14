@@ -111,49 +111,48 @@ let store = {
     }
   },
 
-  getState(){
-    return this._state;
-  },
-
-  rerenderEntireTree (){
+  _callSubscriber(){
     console.log('state change');
   },
 
-  addPost(){
-    let newPost={
-      id:6,
-      src: 'https://sun9-23.userapi.com/c857436/v857436113/83131/YrLqLyoi1Hs.jpg',
-      message: this._state.profilePage.newPostText,
-      likeCounts: 0
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText='';
-    this.rerenderEntireTree(this._state); 
+
+
+  getState(){
+    return this._state;
+  },
+  
+  subscribe (observer){            //ПАТЕРН => наблюдатель
+    this._callSubscriber = observer;         //передача функции из index.js   
   },
 
-  updateNewPostTex(newText){
-    this._state.profilePage.newPostText = newText;
-    this.rerenderEntireTree(this._state); 
-  },
-
-  addMessage(){
-    let newMessage={
-      id:6,
-      message: this._state.dialogsPage.newMessageText,
-    };
-    this._state.dialogsPage.messages.push(newMessage);
-    this._state.dialogsPage.newMessageText='';
-    this.rerenderEntireTree(this._state); 
-  },
-
-  updateNewMessageText(newText){
-    this._state.dialogsPage.newMessageText = newText;
-    this.rerenderEntireTree(this._state); 
-  },
-
-  subscribe (observer){                    //ПАТЕРН => наблюдатель
-    this.rerenderEntireTree = observer;         //передача функции из index.js   
-  },
+  
+  dispatch(action){
+    if(action.type === 'ADD-POST'){
+      let newPost={
+        id:6,
+        src: 'https://sun9-23.userapi.com/c857436/v857436113/83131/YrLqLyoi1Hs.jpg',
+        message: this._state.profilePage.newPostText,
+        likeCounts: 0
+      };
+      this._state.profilePage.posts.unshift(newPost);
+      this._state.profilePage.newPostText='';
+      this._callSubscriber(this._state); 
+    }else if(action.type === 'UPDATE-NEW-POST-TEXT'){
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state); 
+    }else if(action.type === 'ADD-MESSAGE'){
+      let newMessage={
+        id:6,
+        message: this._state.dialogsPage.newMessageText,
+      };
+      this._state.dialogsPage.messages.push(newMessage);
+      this._state.dialogsPage.newMessageText='';
+      this._callSubscriber(this._state); 
+    }else if(action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
+      this._state.dialogsPage.newMessageText = action.newText;
+      this._callSubscriber(this._state);
+    }
+  }
   
 }
 
