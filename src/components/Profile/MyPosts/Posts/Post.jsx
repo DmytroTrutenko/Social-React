@@ -5,7 +5,7 @@ const Post = (props) => {
   return (
 
     <div className={classes.item}>
-      <a href="#" className={classes.avka}>
+      <a href="#">
         <img src={props.src} alt='ava' />
         {props.message}
       </a>

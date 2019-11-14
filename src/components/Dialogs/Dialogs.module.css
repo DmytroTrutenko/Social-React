@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
@@ -14,35 +18,9 @@
 .dialogs .messages {
     background-color: #525252;
     border-radius: 10px;
-    overflow: hidden;
     padding: 10px;
-}
-
-.messages .textarea {
-    margin: 0 10px 0 0;
-    resize: none;
-    background-color: #aaa;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-    outline: none;
-    font-size: larger;
-}
-
-.messages button {
-    text-transform: uppercase;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    transition: all 0.4s ease 0s;
-    color: #eee;
-    background: #202020;
-}
-
-.messages button:hover {
-    background: #000;
-    letter-spacing: 1px;
+    max-height: 600px;
+    height: 100%;
 }
 
 .messages img {
@@ -54,13 +32,15 @@
     background-color: #eee;
 }
 
-.msg_head{
+.msg_head {
     display: flex;
     padding: 10px;
     background-color: #454545;
     border-radius: 10px;
     overflow: hidden;
-    padding: 10px;
+    height: 70px;
+    width: 100%;
+    align-items: center;
 }
 
 .name {
@@ -68,9 +48,71 @@
     padding-left: 10px;
 }
 
-.msg_body{
-    display: flex;
-    justify-content: space-between;
+.msg_body {
+    height: calc(100% - 140px);
+    overflow: auto;
+    word-break: break-all;
 }
 
+.msg_footer {
+    height: 70px;
+    width: 100%;
+    display: flex;
+}
 
+.msg_footer .textarea {
+    resize: none;
+    background-color: #aaa;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    outline: none;
+    font-size: larger;
+    display: inline-block;
+    width: calc(100% - 50px);
+}
+
+.msg_footer button {
+    text-transform: uppercase;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    transition: all 0.4s ease 0s;
+    color: #eee;
+    background: #202020;
+    letter-spacing: 1px;
+    font-size: 25px;
+    width: 50px;
+}
+
+.msg_footer button:hover {
+    background: #000;
+}
+
+.img_cont {
+    position: relative;
+}
+
+.online_icon {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #4cd137;
+    border-radius: 50%;
+    bottom: 4px;
+    right: 1px;
+    border: 1px solid white;
+}
+
+.offline_icon {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #e94347;
+    border-radius: 50%;
+    bottom: 4px;
+    right: 1px;
+    border: 1px solid white;
+}

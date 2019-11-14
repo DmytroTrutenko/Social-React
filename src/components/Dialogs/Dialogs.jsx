@@ -3,6 +3,12 @@ import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPaperPlane
+} from '@fortawesome/free-solid-svg-icons';
+
+
 const Dialogs = (props) => {
 
 
@@ -35,33 +41,32 @@ const Dialogs = (props) => {
       </div>
 
       <div className={classes.messages}>
+
         <div className={classes.msg_head}>
           <div className={classes.img_cont}>
-            <img src='' alt="ava" />
+            <img src='https://sun9-3.userapi.com/c857436/v857436113/83138/oy9Cp_Oeo54.jpg?ava=1' alt="ava" />
+            <span className={classes.online_icon}></span>
           </div>
-          <span className={classes.name}>Name</span>
+          <span className={classes.name}>Chat with Kessel</span>
         </div>
 
         <div className={classes.msg_body}>
-          <div className={classes.msg_body_left}>
           {messagesElements}
-          </div>
-          <div className={classes.msg_body_right}>
-          {messagesElements}
-          </div>
         </div>
 
-        <div className={classes.msg_bot}>
-          <div>
-            <textarea
-              onChange={onMessageChange}
-              ref={newMessageElement}
-              className={classes.textarea}
-              rows="2" cols="30"
-              value={props.state.newMessageText}
+        <div className={classes.msg_footer}>
+          <textarea
+            onChange={onMessageChange}
+            ref={newMessageElement}
+            className={classes.textarea}
+            value={props.state.newMessageText}
+          />
+          <button onClick={addMessage}>
+            <FontAwesomeIcon
+              className={classes.icons}
+              icon={faPaperPlane}
             />
-          </div>
-          <button onClick={addMessage}>Send</button>
+          </button>
         </div>
       </div>
     </div>
