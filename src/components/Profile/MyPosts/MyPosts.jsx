@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Posts/Post';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
+import { addPostCreator, updateNewPostTextCreator } from '../../../redux/state';
 
 
 
@@ -16,12 +16,12 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();  //ссылка на элемент
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.dispatch(addPostCreator());
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(updateNewPostTextActionCreator(text));
+    props.dispatch(updateNewPostTextCreator(text));
   }
 
   return (

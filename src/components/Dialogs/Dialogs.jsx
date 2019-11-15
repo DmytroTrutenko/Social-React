@@ -8,7 +8,7 @@ import {
   faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
 
-import { updateNewMessageTextActionCreator, addMessageActionCreator } from '../../redux/state';
+import { updateNewMessageTextCreator, sendMessageCreator } from '../../redux/state';
 
 
 const Dialogs = (props) => {
@@ -24,13 +24,13 @@ const Dialogs = (props) => {
 
   let newMessageElement = React.createRef();  //ссылка на элемент
 
-  let addMessage = () => {
-    props.dispatch(addMessageActionCreator());
+  let onSendMessage = (e) => {
+    props.dispatch(sendMessageCreator());
   };
 
-  let onMessageChange = () => {
+  let onNewMessageChange = (e) => {
     let text = newMessageElement.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(text));
+    props.dispatch(updateNewMessageTextCreator(text));
   };
 
 
@@ -57,12 +57,13 @@ const Dialogs = (props) => {
 
         <div className={classes.msg_footer}>
           <textarea
-            onChange={onMessageChange}
+            onChange={onNewMessageChange}
+            placeholder='Enter your message'
             ref={newMessageElement}
             className={classes.textarea}
             value={props.state.newMessageText}
           />
-          <button onClick={addMessage}>
+          <button onClick={onSendMessage}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faPaperPlane}
