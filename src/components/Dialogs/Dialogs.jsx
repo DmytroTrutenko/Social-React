@@ -8,6 +8,8 @@ import {
   faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
 
+import { updateNewMessageTextActionCreator, addMessageActionCreator } from '../../redux/state';
+
 
 const Dialogs = (props) => {
 
@@ -23,16 +25,13 @@ const Dialogs = (props) => {
   let newMessageElement = React.createRef();  //ссылка на элемент
 
   let addMessage = () => {
-    let action={type: 'ADD-MESSAGE'};
-    props.dispatch(action);
+    props.dispatch(addMessageActionCreator());
   };
 
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    let action={type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text};
-    props.dispatch(action);
+    props.dispatch(updateNewMessageTextActionCreator(text));
   };
-
 
 
 
