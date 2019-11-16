@@ -2,10 +2,6 @@ import profileReduser from "./profile-reduser";
 import dialogsReduser from "./dialogs-reduser";
 import sidebarReduser from "./sidebar-reduser";
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let store = {
   _state : {
@@ -139,23 +135,6 @@ let store = {
   } 
 }
 
-export const addPostCreator = () => ({type: ADD_POST})
-
-export const updateNewPostTextCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text
-  };
-};
-
-export const sendMessageCreator = () =>({type: SEND_MESSAGE})
-
-export const updateNewMessageTextCreator = (text) => {
-  return {
-    type: UPDATE_NEW_MESSAGE_TEXT, 
-    newText: text
-  };
-};
 
 export default store;
 window.store = store;  //можна смотреть  store в log 

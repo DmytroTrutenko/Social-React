@@ -23,4 +23,15 @@ const dialogsReduser = (state, action) => {
 
 }
 
+export const sendMessageCreator = () => ({
+    type: SEND_MESSAGE
+})
+
+export const updateNewMessageTextCreator = (text) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_TEXT,
+        newText: text
+    };
+};
+
 export default dialogsReduser;
