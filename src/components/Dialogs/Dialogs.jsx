@@ -13,24 +13,25 @@ import { updateNewMessageTextCreator, sendMessageCreator } from '../../redux/dia
 
 const Dialogs = (props) => {
 
+  let state = props.dialogsPage;
 
-  let dialogsElements = props.state.dialogs.map(
+  let dialogsElements = state.dialogs.map(
     d => <DialogItem id={d.id} src={d.src} name={d.name}
     />);
 
-  let messagesElements = props.state.messages.map(
+  let messagesElements = state.messages.map(
     m => <Message message={m.message}
     />);
 
   let newMessageElement = React.createRef();  //ссылка на элемент
 
   let onSendMessage = (e) => {
-    props.dispatch(sendMessageCreator());
+    props.sendMessage();
   };
 
   let onNewMessageChange = (e) => {
     let text = newMessageElement.current.value;
-    props.dispatch(updateNewMessageTextCreator(text));
+    props.updateNewMessageText(text);
   };
 
 
@@ -61,7 +62,7 @@ const Dialogs = (props) => {
             placeholder='Enter your message'
             ref={newMessageElement}
             className={classes.textarea}
-            value={props.state.newMessageText}
+            value={props.newMessageText}
           />
           <button onClick={onSendMessage}>
             <FontAwesomeIcon

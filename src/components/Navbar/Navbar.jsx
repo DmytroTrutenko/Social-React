@@ -10,8 +10,8 @@ import {
 
 
 const Navbar = (props) => {
-
-  let friendsElements = props.state.friends.map(f => <Friends src={f.src} name={f.name} />);
+  let state = props.store.getState();
+  let friendsElements = state.sidebar.friends.map(f => <Friends src={f.src} name={f.name} />);
 
   return (
     <ul className={classes.nav}>
