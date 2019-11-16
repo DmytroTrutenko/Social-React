@@ -11,7 +11,7 @@ import {
 
 const Navbar = (props) => {
 
-  let friednsElements = props.state.friends.map(f => <Friends src={f.src} name={f.name} />);
+  let friendsElements = props.state.friends.map(f => <Friends src={f.src} name={f.name} />);
 
   return (
     <ul className={classes.nav}>
@@ -70,7 +70,7 @@ const Navbar = (props) => {
         </div>
       <div className={classes.item__friends}>
         <ul>
-          {friednsElements}
+          {friendsElements}
         </ul>
       </div>
     </ul>

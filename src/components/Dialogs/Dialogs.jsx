@@ -8,7 +8,7 @@ import {
   faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
 
-import { updateNewMessageTextCreator, sendMessageCreator } from '../../redux/dialogs-reduser';
+import { updateNewMessageTextCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
 
 
 const Dialogs = (props) => {
