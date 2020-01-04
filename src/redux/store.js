@@ -135,6 +135,6 @@ let store = {
   } 
 }
 
-
+2
 export default store;
 window.store = store;  //можна смотреть  store в log 

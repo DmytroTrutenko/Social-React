@@ -2,13 +2,11 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
 
-import { updateNewMessageTextCreator, sendMessageCreator } from '../../redux/dialogs-reducer';
 
 
 const Dialogs = (props) => {
