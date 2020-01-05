@@ -14,11 +14,11 @@ const Dialogs = (props) => {
   let state = props.dialogsPage;
 
   let dialogsElements = state.dialogs.map(
-    d => <DialogItem id={d.id} src={d.src} name={d.name}
+    d => <DialogItem id={d.id} src={d.src} name={d.name} key={d.id} id={d.id}
     />);
 
   let messagesElements = state.messages.map(
-    m => <Message message={m.message}
+    m => <Message message={m.message} key={m.id}
     />);
 
   let newMessageElement = React.createRef();  //ссылка на элемент
