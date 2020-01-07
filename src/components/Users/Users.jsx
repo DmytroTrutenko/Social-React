@@ -8,7 +8,7 @@ if (props.users.length === 0){
         id: 1,
         photoURL: 'https://sun9-1.userapi.com/c636125/v636125322/13643/KkBYQow4QQI.jpg?ava=1',
         followed: false,
-        fullname: 'Dmitry',
+        fullname: 'Dmitry Nagiev',
         status: 'i am a boss',
         location: {
             city: 'Tallinn',
@@ -19,7 +19,7 @@ if (props.users.length === 0){
         id: 2,
         photoURL: 'https://sun9-71.userapi.com/c857224/v857224611/9c85/p8ULu-oNnXo.jpg?ava=1',
         followed: true,
-        fullname: 'Vasia',
+        fullname: 'Julia K.',
         status: 'gg wp',
         location: {
             city: 'Kiev',
@@ -30,7 +30,7 @@ if (props.users.length === 0){
         id: 3,
         photoURL: 'https://sun9-59.userapi.com/c851432/v851432612/151ff4/8KC8TLW1DhE.jpg?ava=1',
         followed: true,
-        fullname: 'Vika',
+        fullname: 'Nikitos Starcraft',
         status: 'i am a beautiful',
         location: {
             city: 'Madrid',
@@ -41,7 +41,7 @@ if (props.users.length === 0){
         id: 4,
         photoURL: 'https://sun9-69.userapi.com/c845417/v845417469/d5a6f/7dXKtY3QyXY.jpg?ava=1',
         followed: true,
-        fullname: 'Conor',
+        fullname: 'Natali Sterpul',
         status: 'King UFC',
         location: {
             city: 'New York',
