@@ -4,7 +4,7 @@ import Friends from './Friends/Friends';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faUser, faEnvelope, faNewspaper, faMusic, faCogs, faUsers
+  faUser, faEnvelope, faNewspaper, faMusic, faCogs, faUsers, faSearch
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -59,6 +59,15 @@ const Navbar = (props) => {
             icon={faCogs}
           />
           Settings
+                </NavLink>
+      </li>
+      <li className={classes.item}>
+        <NavLink to='/users' activeClassName={classes.active}>
+          <FontAwesomeIcon
+            className={classes.icons}
+            icon={faSearch}
+          />
+          Find users
                 </NavLink>
       </li>
 
