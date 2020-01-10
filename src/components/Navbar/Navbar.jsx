@@ -11,7 +11,7 @@ import {
 
 const Navbar = (props) => {
   
-  let friendsElements = props.sidebar.friends.map(f => <Friends src={f.src} name={f.name} />);
+  let friendsElements = props.sidebar.friends.map(f => <Friends key={f.id} src={f.src} name={f.name} />);
   
   return (
     <ul className={classes.nav}>

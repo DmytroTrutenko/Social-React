@@ -5,8 +5,7 @@ import userPhotoMan from "./../../assets/img/userMan.png";
 
 class Users extends React.Component {
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     axios.get("https://social-network.samuraijs.com/api/1.0/users")
       .then(response => {
         this.props.setUsers(response.data.items);
@@ -16,11 +15,11 @@ class Users extends React.Component {
   render() {
     return <div className={classes.uwrap}>
       {this.props.users.map(u => (
-        <div class={classes.users} key={u.id}>
+        <div className={classes.users} key={u.id}>
           <span>
             <div>
               <img
-                class={classes.photoImg}
+                className={classes.photoImg}
                 src={u.photos.small != null ? u.photos.small : userPhotoMan}
               />
             </div>
