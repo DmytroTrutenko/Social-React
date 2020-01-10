@@ -1,65 +1,34 @@
 import React from 'react';
 import classes from './Users.module.css';
+import * as Axios from 'axios';
+import userPhotoMan from './../../assets/img/userMan.png';
 
 let Users = (props) => {
 
-if (props.users.length === 0){
-    props.setUsers([{
-        id: 1,
-        photoURL: 'https://sun9-1.userapi.com/c636125/v636125322/13643/KkBYQow4QQI.jpg?ava=1',
-        followed: false,
-        fullname: 'Dmitry Nagiev',
-        status: 'i am a boss',
-        location: {
-            city: 'Tallinn',
-            country: 'Estonia'
+    const getUsers = () => {
+        if (props.users.length === 0) {
+            Axios.get('https://social-network.samuraijs.com/api/1.0/users')
+                .then(response => {
+                    props.setUsers(response.data.items)
+                });
         }
-    },
-    {
-        id: 2,
-        photoURL: 'https://sun9-71.userapi.com/c857224/v857224611/9c85/p8ULu-oNnXo.jpg?ava=1',
-        followed: true,
-        fullname: 'Julia K.',
-        status: 'gg wp',
-        location: {
-            city: 'Kiev',
-            country: 'Ukraine'
-        }
-    },
-    {
-        id: 3,
-        photoURL: 'https://sun9-59.userapi.com/c851432/v851432612/151ff4/8KC8TLW1DhE.jpg?ava=1',
-        followed: true,
-        fullname: 'Nikitos Starcraft',
-        status: 'i am a beautiful',
-        location: {
-            city: 'Madrid',
-            country: 'Spain'
-        }
-    },
-    {
-        id: 4,
-        photoURL: 'https://sun9-69.userapi.com/c845417/v845417469/d5a6f/7dXKtY3QyXY.jpg?ava=1',
-        followed: true,
-        fullname: 'Natali Sterpul',
-        status: 'King UFC',
-        location: {
-            city: 'New York',
-            country: 'USA'
-        }
-    }]);
-}
-       
-    
+    }
+
+
 
 
     return (
-        <div>
+        <div className={classes.uwrap}>
+            <button onClick={getUsers}>Get Users</button>
             {
                 props.users.map(u => <div class={classes.users} key={u.id}>
                     <span>
                         <div>
-                            <img class={classes.photoImg} src={u.photoURL} />
+                            <img
+                                class={classes.photoImg}
+                                src={u.photos.small != null
+                                    ? u.photos.small
+                                    : userPhotoMan} />
                         </div>
                         <div>
                             {u.followed
@@ -69,12 +38,12 @@ if (props.users.length === 0){
                     </span>
                     <span>
                         <span>
-                            <div>{u.fullname}</div>
+                            <div>{u.name}</div>
                             <div>{u.status}</div>
                         </span>
                         <span>
-                            <div>{u.location.country}</div>
-                            <div>{u.location.city}</div>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
                         </span>
                     </span>
                 </div>)
