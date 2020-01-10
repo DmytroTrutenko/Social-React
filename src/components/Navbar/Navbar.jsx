@@ -10,9 +10,8 @@ import {
 
 
 const Navbar = (props) => {
-
-  // let state = props.store.getState();
-  // let friendsElements = props.state.sidebar.friends.map(f => <Friends src={f.src} name={f.name} />);
+  
+  let friendsElements = props.sidebar.friends.map(f => <Friends src={f.src} name={f.name} />);
   
   return (
     <ul className={classes.nav}>
@@ -80,7 +79,7 @@ const Navbar = (props) => {
               </div>
       <div className={classes.item__friends}>
         <ul>
-          {/* {friendsElements} */}
+          {friendsElements}
         </ul>
       </div>
     </ul>
