@@ -1,52 +1,68 @@
-
 * {
-    box-sizing: border-box;
-    
+	box-sizing: border-box;
 }
 
-.users{
-    display: flex;
-    background-color: #525252;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 5px;
-    color: #eee;
+.users {
+	display: flex;
+	background-color: #525252;
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 5px;
+	color: #eee;
 }
 
-.photoImg{
-    margin-left: 10px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    padding: 1px;
-    background-color: #eee;
+.photoImg {
+	margin-left: 10px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	padding: 1px;
+	background-color: #eee;
 }
 
 .uwrap button {
-    text-transform: uppercase;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    transition: all 0.4s ease 0s;
-    color: #eee;
-    background: #202020;
+	text-transform: uppercase;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+	color: #eee;
+	background: #202020;
 }
 
 .uwrap button:hover {
-    background: #525252;
-    letter-spacing: 1px;
+	background: #525252;
+	letter-spacing: 1px;
 }
 
-.selectedPage{
-    margin-left: 3px;
-    margin-right: 3px;
-    font-weight: bold;
-    font-size: large;
+.selectedPage {
+	margin-left: 3px;
+	margin-right: 3px;
+	font-weight: bold;
+	font-size: large;
 }
 
-.countPage:hover{
-    display: inline-block;
-    cursor: pointer;
+.countPage {
+	display: flex;
+	justify-content: flex-start;
+	cursor: pointer;
+	overflow: auto;
+	height: 40px;
+    width: 200px;
+    overflow-y: hidden;
+    padding-top: 5px;
+}
+
+.countPage::-webkit-scrollbar {
+	width: 10px;
+    height: 10px;
+}
+.countPage::-webkit-scrollbar-thumb {
+    background: #000;
+    width: 20px;
+}	
+.countPage::-webkit-scrollbar-track {
+    background: transparent;
 }

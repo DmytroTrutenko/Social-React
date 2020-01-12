@@ -73,7 +73,7 @@ const Navbar = (props) => {
       <div className={classes.title}>
         <FontAwesomeIcon
           className={classes.icons}
-          icon={faUser}
+          icon={faUsers}
         />
         Friends
               </div>
