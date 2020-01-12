@@ -38,3 +38,15 @@
     background: #525252;
     letter-spacing: 1px;
 }
+
+.selectedPage{
+    margin-left: 3px;
+    margin-right: 3px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.countPage:hover{
+    display: inline-block;
+    cursor: pointer;
+}
