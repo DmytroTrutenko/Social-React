@@ -1,57 +1,54 @@
 .nav {
-  grid-area: n;
-  background-color: #202020;
-  padding: 10px;
-  margin: 0;
-  list-style: none;
+	grid-area: n;
+	background-color: #202020;
+	padding: 10px;
+	margin: 0;
+	list-style: none;
 }
 
 .item {
-  color: #eee;
-  padding: 10px 0;
+	color: #eee;
+	padding: 10px 0;
 }
 
 .nav a {
-  padding: 5px 0;
-  color: #eee;
-  text-decoration: none;
+	padding: 5px 0;
+	color: #eee;
+	text-decoration: none;
+	transition: all 0.3s;
 }
 
 .nav a.active {
-  color: #aaaa;
-
+	color: #aaaa;
 }
 
 .nav a:hover {
-  color: #aaaa;
+	color: #aaaa;
+}
+
+.nav a:hover .icons {
+	margin-right: 15px;
 }
 
 .title {
-  display: block;
-  color: #eee;
-  font-size: 20px;
-  margin-top: 100px;
-}
-
-.item__friends {
-  display: flex;
-  color: #eee;
+	display: block;
+	color: #eee;
+	font-size: 20px;
+	margin-top: 100px;
 }
 
 .item__friends ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin: 0;
-  padding: 0;
+	color: #eee;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 10px 0;
   width: 100%;
-  min-height: 87px;
+  justify-content: space-between;
 }
 
-.icons{
-  margin-right: 10px;
+.icons {
+	margin-right: 10px;
+	transition: all 0.3s;
 }
-
-

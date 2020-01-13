@@ -5,8 +5,8 @@
 
 .dialog img {
     margin-left: 10px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     padding: 1px;
     background-color: #eee;
@@ -14,8 +14,6 @@
 }
 
 .dialog a:hover img {
-    width: 50px;
-    height: 50px;
     cursor: pointer;
 }
 
@@ -55,22 +53,22 @@
 
 .online_icon{
     position: absolute;
-    height: 10px;
-    width:10px;
+    height: 12px;
+    width:12px;
     background-color: #4cd137;
     border-radius: 50%;
-    bottom: 4px;
+    bottom: 8px;
     right: 1px;
     border:1px solid white;
   }
   
   .offline_icon{
     position: absolute;
-    height: 10px;
-    width:10px;
+    height: 12px;
+    width:12px;
     background-color: #e94347 ;
     border-radius: 50%;
-    bottom: 4px;
+    bottom: 8px;
     right: 1px;
     border:1px solid white;
   }

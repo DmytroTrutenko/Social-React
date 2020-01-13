@@ -1,51 +1,109 @@
 .profile_info {
-  position: relative;
-  padding: 150px 10px 10px 10px;
+	position: relative;
+	padding: 150px 10px 10px 10px;
 }
 
 .profile_info_bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
 }
 
 .main_info {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-
+	position: relative;
+	display: flex;
+	align-items: flex-start;
 }
 
 .main_info img {
-  display: block;
-  width: 150px;
-  height: 200px;
-  object-fit: cover;
-  padding: 5px;
-  background-color: #eee;
+	display: block;
+	width: 150px;
+	height: 200px;
+	object-fit: cover;
+	padding: 5px;
+	background-color: #eee;
 }
 
 .profile_data {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  max-width: 60%;
-  max-height: 190px;
-  overflow: hidden;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	max-width: 60%;
+	max-height: 190px;
+	overflow: hidden;
 }
 
 .main_info h2 {
-  margin: 0 0 5px 0;
+	margin: 0 0 5px 0;
+	color: #eee;
 }
 
-.profile_data p {
-  color: #eee;
-  background-color: #525252;
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 10px;
+.profile_data .about_enable  {
+	color: #eee;
+	background-color: #525252;
+	border-radius: 10px;
+	overflow: hidden;
+	display: block;
+	margin-top: 16px;
+	padding: 10px;
+}
+
+.profile_data .about_disable  {
+	display: none;
+}
+
+.socials {
+	list-style: none;
+	margin: 0;
+  padding: 10px 5px;
+  
+}
+
+.socials li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+
+.socials li:hover a{
+  color: #202020;
+  transform: translateY(-5px);
+}
+
+.socials li a {
+	color: #525252;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+
+
+.socials li a .icons {
+  font-size: 25px;
+}
+
+.job_enable{
+	color: green;
+	font-weight: 600;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.job_disable{
+	display: none;
+}
+.Job{
+	padding: 20px 0;
+}
+
+.Job p{
+	margin: 0;
 }

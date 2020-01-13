@@ -5,7 +5,7 @@ import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../common/preloader/Preloader';
 
-class UsersAPI extends React.Component {
+class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.setIsFetching(true);
@@ -79,4 +79,4 @@ export default connect(mapStateToProps,
     {
         follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setIsFetching
 
-    })(UsersAPI);
+    })(UsersContainer);

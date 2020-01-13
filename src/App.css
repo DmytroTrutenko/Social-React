@@ -7,12 +7,13 @@
     'h h'
     'n c';
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 230px 10fr;
   grid-gap: 5px;
   height: 100vh;
 }
 
 .app-wrapper-content {
+  position: relative;
   grid-area: c;
   background-color: #eee;
   height: 100%;
