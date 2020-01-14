@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Header.module.css';
-import img from '../../assets/img/logo.svg';
+import img from '../../assets/img/logo1.png';
 
 const Header = () => {
     return (
@@ -8,7 +8,7 @@ const Header = () => {
             <div className={classes.head__img}>
                 <img src={img} alt="logo" />
             </div>
-            <span>Reactive Network</span>
+            <span>Duckbook</span>
         </header>
     );
 }

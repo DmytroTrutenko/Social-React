@@ -30,50 +30,50 @@ const ProfileInfo = (props) => {
       {/* contacts */}
       <div className={classes.contacts}>
         <ul className={classes.socials}>
-          <li><a href={props.profile.contacts.facebook}>
+          <li><a href={props.profile.contacts.facebook != null && props.profile.contacts.facebook.indexOf('https://') === 0 ? props.profile.contacts.facebook : 'https://' + props.profile.contacts.facebook}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faFacebook}
             />
           </a></li>
-          <li><a href={props.profile.contacts.website}>
+          <li><a href={props.profile.contacts.website != null && props.profile.contacts.website.indexOf('https://') === 0 ? props.profile.contacts.website : 'https://' + props.profile.contacts.website}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faGlobe}
             />
 
           </a></li>
-          <li><a href={props.profile.contacts.vk}>
+          <li><a href={props.profile.contacts.vk != null && props.profile.contacts.vk.indexOf('https://') === 0 ? props.profile.contacts.vk : 'https://' + props.profile.contacts.vk}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faVk}
             />
           </a></li>
-          <li><a href={props.profile.contacts.twitter}>
+          <li><a href={props.profile.contacts.twitter != null && props.profile.contacts.twitter.indexOf('https://') === 0 ? props.profile.contacts.twitter : 'https://' + props.profile.contacts.twitter}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faTwitter}
             />
           </a></li>
-          <li><a href={props.profile.contacts.instagram}>
+          <li><a href={props.profile.contacts.instagram != null && props.profile.contacts.instagram.indexOf('https://') === 0 ? props.profile.contacts.instagram : 'https://' + props.profile.contacts.instagram}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faInstagram}
             />
           </a></li>
-          <li><a href={props.profile.contacts.youtube}>
+          <li><a href={props.profile.contacts.youtube != null && props.profile.contacts.youtube.indexOf('https://') === 0 ? props.profile.contacts.youtube : 'https://' + props.profile.contacts.youtube}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faYoutube}
             />
           </a></li>
-          <li><a href={props.profile.contacts.github}>
+          <li><a href={props.profile.contacts.github != null && props.profile.contacts.github.indexOf('https://') === 0 ? props.profile.contacts.github : 'https://' + props.profile.contacts.github}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faGithub}
             />
           </a></li>
-          <li><a href={props.profile.contacts.mainLink}>
+          <li><a href={props.profile.contacts.mainLink != null && props.profile.contacts.mainLink.indexOf('https://') === 0 ? props.profile.contacts.mainLink : 'https://' + props.profile.contacts.mainLink}>
             <FontAwesomeIcon
               className={classes.icons}
               icon={faAt}
