@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Users.module.css";
 import userNoPhoto from "./../../assets/img/duckNoAva2.jpg";
 import { NavLink } from "react-router-dom";
+import Axios from "axios";
 
 const Users = (props) => {
 
@@ -24,7 +25,7 @@ const Users = (props) => {
       <div className={classes.users} key={u.id}>
         <span>
           <div>
-            <NavLink to= {'/profile/'+ u.id}>
+            <NavLink to={'/profile/' + u.id}>
               <img
                 className={classes.photoImg}
                 src={u.photos.small != null ? u.photos.small : userNoPhoto}
@@ -32,14 +33,37 @@ const Users = (props) => {
             </NavLink>
           </div>
           <div>
-            {u.followed
+            {!u.followed
+
               ? (<button
-                onClick={() => { props.unfollow(u.id); }}>
-                Unfollow
+                onClick={() => {
+                  Axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
+                    {
+                      withCredentials: true,
+                      headers: { 'API-KEY': '5ad24d5a-e428-47a7-b1ff-f9ab7c19bde8' }
+                    })
+                    .then(response => {
+                      if (response.data.resultCode === 0) {
+                        props.follow(u.id);
+                      }
+                    });
+                }}>
+                follow
                     </button>)
               : (<button
-                onClick={() => { props.follow(u.id); }}>
-                Follow
+                onClick={() => {
+                  Axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
+                    {
+                      withCredentials: true,
+                      headers: { 'API-KEY': '5ad24d5a-e428-47a7-b1ff-f9ab7c19bde8' }
+                    })
+                    .then(response => {
+                      if (response.data.resultCode === 0) {
+                        props.unfollow(u.id);
+                      }
+                    });
+                }}>
+                unFollow
                     </button>)
             }
           </div>
@@ -54,9 +78,9 @@ const Users = (props) => {
             <div>{"u.location.city"}</div>
           </span>
         </span>
-      </div>
+      </div >
     ))}
-  </div>
+  </div >
 }
 
 
