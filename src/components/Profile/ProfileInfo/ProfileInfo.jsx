@@ -4,8 +4,7 @@ import Preloader from '../../common/preloader/Preloader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faAt } from '@fortawesome/free-solid-svg-icons';
 import { faVk, faFacebook, faTwitter, faInstagram, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
-
-import userNoAva from './../../../assets/img/userNoAva.png';
+import userNoPhoto from './../../../assets/img/duckNoAva2.jpg';
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -19,7 +18,7 @@ const ProfileInfo = (props) => {
 
       {/* AVA+descriptions */}
       <div className={classes.main_info}>
-        <img src={props.profile.photos.large ? props.profile.photos.large : userNoAva} alt="avatar" />
+        <img src={props.profile.photos.large ? props.profile.photos.large : userNoPhoto} alt="avatar" />
         <div className={classes.profile_data}>
           <h2>{props.profile.fullName}</h2>
           <span className={props.profile.aboutMe ? classes.about_enable : classes.about_disable}>
