@@ -3,6 +3,7 @@ import classes from "./Users.module.css";
 import userNoPhoto from "./../../assets/img/duckNoAva2.jpg";
 import { NavLink } from "react-router-dom";
 import Axios from "axios";
+import { usersAPI } from "../../api/api";
 
 const Users = (props) => {
 
@@ -35,33 +36,29 @@ const Users = (props) => {
           <div>
             {!u.followed
 
-              ? (<button
+              ? (<button disabled={props.followingInProgress.some(id=>id === u.id)}
                 onClick={() => {
-                  Axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
-                    {
-                      withCredentials: true,
-                      headers: { 'API-KEY': '5ad24d5a-e428-47a7-b1ff-f9ab7c19bde8' }
-                    })
-                    .then(response => {
-                      if (response.data.resultCode === 0) {
-                        props.follow(u.id);
-                      }
-                    });
+                  props.setIsFollowing(true, u.id);
+                  usersAPI.followUser(u.id).then(data => {
+                    if (data.resultCode === 0) {
+                      props.follow(u.id);
+                    }
+                    props.setIsFollowing(false, u.id);
+                  });
+                  
                 }}>
                 follow
                     </button>)
-              : (<button
+              : (<button disabled={props.followingInProgress.some(id=>id === u.id)}
                 onClick={() => {
-                  Axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                    {
-                      withCredentials: true,
-                      headers: { 'API-KEY': '5ad24d5a-e428-47a7-b1ff-f9ab7c19bde8' }
-                    })
-                    .then(response => {
-                      if (response.data.resultCode === 0) {
-                        props.unfollow(u.id);
-                      }
-                    });
+                  props.setIsFollowing(true, u.id);
+                  usersAPI.unfollowUser(u.id).then(data => {
+                    if (data.resultCode === 0) {
+                      props.unfollow(u.id);
+                    }
+                    props.setIsFollowing(false, u.id);
+                  });
+
                 }}>
                 unFollow
                     </button>)
