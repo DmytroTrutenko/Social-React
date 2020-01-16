@@ -6,9 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
-import { Redirect } from 'react-router-dom';
-
-
 
 const Dialogs = (props) => {
 
@@ -32,13 +29,7 @@ const Dialogs = (props) => {
     let text = newMessageElement.current.value;
     props.updateNewMessageText(text);
   };
-
-  
-  if(!props.isAuth){
-    return <Redirect to= {'/login'}/>
-  }
-
-
+ 
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogsItems}>
