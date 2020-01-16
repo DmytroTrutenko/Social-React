@@ -100,7 +100,7 @@ export const setProfile = (profileId) =>{
     profileAPI.getProfile(profileId).then(response => {
       dispatch(setUserProfile(response.data));
     });
-  }
+  } 
 }
 
 export default profileReducer;
