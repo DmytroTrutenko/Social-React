@@ -2,6 +2,7 @@ import React from 'react';
 import { addPostCreator, updateNewPostTextCreator } from '../../../redux/profile-reducer';
 import MyPosts from './MyPosts';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 
 //как работает connect() в react-redux библиотеке
@@ -56,9 +57,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-// отрисовываем презент компоненту с переданными ей данными
-const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
 
-
-
-export default MyPostsContainer;
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps)
+)(MyPosts); 

@@ -3,6 +3,7 @@ import { updateNewMessageTextCreator, sendMessageCreator } from '../../redux/dia
 import Dialogs from './Dialogs';
 import { connect } from 'react-redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 //как работает connect() в react-redux библиотеке
 // const DialogsContainer = (props) => {    
@@ -37,7 +38,7 @@ import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 let mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
-    newMessageText : state.dialogsPage.newMessageText
+    newMessageText: state.dialogsPage.newMessageText
   }
 }
 
@@ -52,9 +53,16 @@ let mapDispatchToProps = (dispatch) => {
   }
 }
 
-let AuthRedirectComponent = withAuthRedirect(Dialogs);
 
-// отрисовываем презент компоненту с переданными ей данными
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
+// let AuthRedirectComponent = withAuthRedirect(Dialogs);  //вызываем HOC на редирект
+// // отрисовываем презент компоненту с переданными ей данными
+// const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
 
-export default DialogsContainer;  
+
+//функция compose вызывает конвеер функций для начальной какой-то компоненты.
+//вызываются функции снизу вверх
+
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withAuthRedirect
+)(Dialogs); 
