@@ -77,18 +77,17 @@ const usersReducer = (state = initialState, action) => {
                     : state.followingInProgress.filter(id => id != action.userId)
             };
         }
-
         default:
             return state;
     }
 }
 
-export const follow = (userId) => ({
+export const followSuccess = (userId) => ({
     type: FOLLOW,
     userId
 })
 
-export const unfollow = (userId) => ({
+export const unfollowSuccess = (userId) => ({
     type: UNFOLLOW,
     userId
 })
@@ -118,7 +117,7 @@ export const setIsFollowing = (followingInProgress, userId) => ({
     userId
 })
 
-export const getUsersAC = (currentPage, pageSize) => {
+export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(setIsFetching(true));
         usersAPI.getUsers(currentPage, pageSize)
@@ -129,5 +128,31 @@ export const getUsersAC = (currentPage, pageSize) => {
             });
     }
 }
+
+export const follow = (id) => {
+    return (dispatch) => {
+        dispatch(setIsFollowing(true, id));
+        usersAPI.followUser(id).then(data => {
+          if (data.resultCode === 0) {
+            dispatch(followSuccess(id));
+          }
+          dispatch(setIsFollowing(false, id));
+        });
+    }
+}
+export const unfollow = (id) => {
+    return (dispatch) => {
+        dispatch(setIsFollowing(true, id));
+        usersAPI.unfollowUser(id).then(data => {
+          if (data.resultCode === 0) {
+            dispatch(unfollowSuccess(id));
+          }
+          dispatch(setIsFollowing(false, id));
+        });
+    }
+}
+
+
+
 
 export default usersReducer;
