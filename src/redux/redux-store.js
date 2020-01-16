@@ -1,10 +1,10 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware  } from "redux";
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
 import authReduser from "./auth-reduser";
-
+import thunkMiddleware from 'redux-thunk';
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -14,7 +14,7 @@ let reducers = combineReducers({
     auth: authReduser
 })
 
-let store = createStore(reducers);
+let store = createStore(reducers, applyMiddleware(thunkMiddleware)); //подключили store и мидл веер для диспатча санок! 
 
 
 window.store = store;
