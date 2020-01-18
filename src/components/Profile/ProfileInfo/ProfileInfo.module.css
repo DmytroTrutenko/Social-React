@@ -42,20 +42,6 @@
 	color: #eee;
 }
 
-.profile_data .about_enable  {
-	color: #eee;
-	background-color: #525252;
-	border-radius: 10px;
-	overflow: hidden;
-	display: block;
-	margin-top: 16px;
-	padding: 10px;
-}
-
-.profile_data .about_disable  {
-	display: none;
-}
-
 .socials {
 	list-style: none;
 	margin: 0;
