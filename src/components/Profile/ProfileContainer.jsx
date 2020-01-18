@@ -30,7 +30,7 @@ const mapStateToProps = (state) => {
 
 
 //как работает диспатч
-// const mapDispatchToProps = (dispatch) => {
+// const mapDispatchToProps = (dispatch) => {ы
 //     return {
 //         follow: (userId) => {
 //             dispatch(followAC(userId));
