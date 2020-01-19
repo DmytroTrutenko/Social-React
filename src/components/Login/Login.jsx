@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Login = (props) =>{
-    return(
+    return(<>
         <h1>Login</h1>
+        </>
     );
 }
 
