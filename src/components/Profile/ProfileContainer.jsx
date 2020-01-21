@@ -3,7 +3,6 @@ import Profile from './Profile';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {setProfile, getUserStatus, updateUserStatus} from '../../redux/profile-reducer';
-import {withAuthRedirect} from '../../hoc/withAuthRedirect';
 import {compose} from 'redux';
 
 
@@ -12,7 +11,10 @@ class ProfileContainer extends React.Component {
     componentDidMount() {
         let profileId = this.props.match.params.userId;
         if (!profileId) {
-            profileId = 5662;
+            profileId = this.props.authorizedUserId;
+            if(!profileId){
+                this.props.history.push('/login');
+            }
         }
         this.props.setProfile(profileId);
         this.props.getUserStatus(profileId);
@@ -29,9 +31,11 @@ class ProfileContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         profile: state.profilePage.profile,
-        status: state.profilePage.status
+        status: state.profilePage.status,
+        authorizedUserId: state.auth.id,
+        isAuth: state.auth.isAuth
     }
-}
+};
 
 
 //как работает диспатч
@@ -56,6 +60,5 @@ const mapStateToProps = (state) => {
 //вызываются функции снизу вверх
 export default compose(
     connect(mapStateToProps, {setProfile, getUserStatus, updateUserStatus}),
-    withRouter,
-    withAuthRedirect
+    withRouter
 )(ProfileContainer); 

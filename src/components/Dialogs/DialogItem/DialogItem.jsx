@@ -8,14 +8,14 @@ const DialogItem = (props) => {
       <NavLink to={'/dialogs/' + props.id} activeClassName={classes.active}>
         <div className={classes.img_cont}>
           <img src={props.src} alt="ava" />
-          <span className={classes.online_icon}></span>
+          <span className={classes.online_icon}/>
         </div>
         <div className={classes.name}>
           {props.name}
         </div>
       </NavLink>
     </div>
-  );
-}
+  )
+};
 
 export default DialogItem;  

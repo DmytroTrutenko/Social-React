@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
 import classes from './Login.module.css'
+import classes2 from './../common/Forms/forms.module.css'
 import {Input} from "../common/Forms/forms";
 import {maxLength, required} from "../../utils/validators/validators";
 import {login} from "../../redux/auth-reduser";
@@ -23,6 +24,7 @@ const LoginForm = (props) => {
             <div>
                 <Field type={'checkbox'} name={'rememberMe'} component={'input'}/> remember me
             </div>
+           {props.error ? <span className={classes2.formSummaryError}>{props.error}</span> : null}
             <div>
                 <button>Login</button>
             </div>
@@ -43,6 +45,11 @@ const Login = (props) => {
     return (<>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit}/>
+            <div>
+                <p>тестовый аккаунт:</p>
+                <h3>Email: free@samuraijs.com</h3>
+                <h3> Password: free</h3>
+            </div>
         </>
     );
 };

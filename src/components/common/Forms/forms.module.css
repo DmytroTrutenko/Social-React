@@ -27,3 +27,11 @@
 .error span {
     color: red;
 }
+
+.formSummaryError{
+    margin-left: 130px;
+    border: solid 2px red;
+    padding: 5px;
+    color: red;
+    font-weight: bold;
+}
