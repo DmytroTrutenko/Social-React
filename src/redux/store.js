@@ -124,7 +124,7 @@ let store = {
   },
   
   subscribe (observer){            //ПАТЕРН => наблюдатель
-    this._callSubscriber = observer;         //передача функции из index.js   
+    this._callSubscriber = observer;         //передача функции из validators.js
   },
 
   dispatch(action){

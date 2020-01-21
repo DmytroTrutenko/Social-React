@@ -1,17 +1,5 @@
 .myPosts {
     padding: 10px;
-    
-}
-
-.textarea {
-    margin: 0 10px 0 0;
-    resize: none;
-    background-color: #aaa;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-    outline: none;
-    font-size: larger;
 }
 
 .posts {
@@ -23,17 +11,26 @@
     outline: none;
 }
 
-.myPosts button {
+.post_footer {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.post_footer button {
     text-transform: uppercase;
     padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     border: none;
     transition: all 0.4s ease 0s;
     color: #eee;
     background: #202020;
+    letter-spacing: 1px;
+    font-size: 25px;
+    width: 50px;
 }
-
-.myPosts button:hover {
-    background: #404040;
+.post_footer button:hover {
+    background: #000;
 }

@@ -1,0 +1,29 @@
+
+.formControl textarea {
+    resize: none;
+    background-color: #aaa;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    outline: none;
+    font-size: larger;
+    display: inline-block;
+    width: calc(100% - 50px);
+}
+
+.formControl input {
+    background-color: #aaa;
+    overflow: hidden;
+    padding: 5px;
+    margin: 5px;
+}
+
+.error textarea,
+.error input {
+    border: solid red 1px;
+}
+
+.error span {
+    color: red;
+}

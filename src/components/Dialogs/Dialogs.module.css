@@ -60,19 +60,6 @@
     display: flex;
 }
 
-.msg_footer .textarea {
-    resize: none;
-    background-color: #aaa;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-    outline: none;
-    font-size: larger;
-    display: inline-block;
-    width: calc(100% - 50px);
-}
-
 .msg_footer button {
     text-transform: uppercase;
     padding: 10px;

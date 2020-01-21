@@ -8,7 +8,6 @@ const instance = Axios.create({
     },
 });
 
-
 export const usersAPI = {
     getUsers(currentPage, pageSize) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
@@ -29,7 +28,7 @@ export const usersAPI = {
                 return response.data;
             })
     }
-}
+};
 
 export const profileAPI = {
     getProfile(userId) {
@@ -43,13 +42,21 @@ export const profileAPI = {
             status: status
         })
     }
-}
+};
 
 export const authAPI = {
     getMe() {
         return instance.get(`auth/me`)
+    },
+    login(email, password) {
+        return instance.post(`auth/login`, {
+            email: email,
+            password: password
+        }).then(response => {
+           return response.data;
+        })
     }
-}
+};
 
 
 

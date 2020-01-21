@@ -3,7 +3,6 @@ import classes from './Post.module.css';
 
 const Post = (props) => {
   return (
-
     <div className={classes.item}>
       <a href="#">
         <img src={props.src} alt='ava' />
@@ -14,7 +13,6 @@ const Post = (props) => {
         <span>{props.likeCounts}</span>
       </div>
     </div>
-
   );
-}
+};
 export default Post;

@@ -80,42 +80,42 @@ const usersReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
 
 export const followSuccess = (userId) => ({
     type: FOLLOW,
     userId
-})
+});
 
 export const unfollowSuccess = (userId) => ({
     type: UNFOLLOW,
     userId
-})
+});
 
 export const setUsers = (users) => ({
     type: SET_USERS,
     users
-})
+});
 
 export const setCurrentPage = (pageNumber) => ({
     type: SET_CURRENT_PAGE,
     currentPage: pageNumber
-})
+});
 
 export const setTotalUsersCount = (countNumber) => ({
     type: SET_TOTAL_USERS_COUNT,
     totalUsersCount: countNumber
-})
+});
 
 export const setIsFetching = (isFetching) => ({
     type: TOGGLE_IS_FETCHING,
     isFetching
-})
+});
 export const setIsFollowing = (followingInProgress, userId) => ({
     type: TOGGLE_IS_FOLLOWING,
     followingInProgress,
     userId
-})
+});
 
 export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
@@ -127,7 +127,7 @@ export const getUsers = (currentPage, pageSize) => {
                 dispatch(setTotalUsersCount(data.totalCount));
             });
     }
-}
+};
 
 export const follow = (id) => {
     return (dispatch) => {
@@ -139,7 +139,7 @@ export const follow = (id) => {
           dispatch(setIsFollowing(false, id));
         });
     }
-}
+};
 export const unfollow = (id) => {
     return (dispatch) => {
         dispatch(setIsFollowing(true, id));
@@ -150,7 +150,7 @@ export const unfollow = (id) => {
           dispatch(setIsFollowing(false, id));
         });
     }
-}
+};
 
 
 
