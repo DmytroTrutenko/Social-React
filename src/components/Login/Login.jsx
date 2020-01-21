@@ -1,6 +1,5 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
-import {authAPI} from "../../api/api";
 import classes from './Login.module.css'
 import {Input} from "../common/Forms/forms";
 import {maxLength, required} from "../../utils/validators/validators";
@@ -38,10 +37,9 @@ const Login = (props) => {
     const onSubmit = (formData) => {
         props.login(formData.email, formData.password, formData.rememberMe)
     };
-    if(props.isAuth){
-        return <Redirect to = {'/profile'}/>
+    if (props.isAuth) {
+        return <Redirect to={'/profile'}/>
     }
-
     return (<>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit}/>
@@ -49,7 +47,7 @@ const Login = (props) => {
     );
 };
 
-const mapDispatchToProps = (state) =>({
+const mapDispatchToProps = (state) => ({
     isAuth: state.auth.isAuth
 });
 

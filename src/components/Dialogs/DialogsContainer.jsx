@@ -1,9 +1,9 @@
 import React from 'react';
-import { sendMessageCreator } from '../../redux/dialogs-reducer';
+import {sendMessageCreator} from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
-import { connect } from 'react-redux';
-import { withAuthRedirect } from '../../hoc/withAuthRedirect';
-import { compose } from 'redux';
+import {connect} from 'react-redux';
+import {withAuthRedirect} from '../../hoc/withAuthRedirect';
+import {compose} from 'redux';
 
 // как работает connect() в react-redux библиотеке
 // const DialogsContainer = (props) => {
@@ -33,17 +33,17 @@ import { compose } from 'redux';
 // };
 
 let mapStateToProps = (state) => {
-  return {
-    dialogsPage: state.dialogsPage
-  }
+    return {
+        dialogsPage: state.dialogsPage
+    }
 };
 
 let mapDispatchToProps = (dispatch) => {
-  return {
-    sendMessage: (newMessageBody) => {
-      dispatch(sendMessageCreator(newMessageBody));
+    return {
+        sendMessage: (newMessageBody) => {
+            dispatch(sendMessageCreator(newMessageBody));
+        }
     }
-  }
 };
 
 
@@ -55,5 +55,6 @@ let mapDispatchToProps = (dispatch) => {
 // вызываются функции снизу вверх
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps)
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
 )(Dialogs); 
