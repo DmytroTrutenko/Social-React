@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faAt } from '@fortawesome/free-solid-svg-icons';
 import { faVk, faFacebook, faTwitter, faInstagram, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
 import userNoPhoto from './../../../assets/img/duckNoAva2.jpg';
-import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
 
@@ -23,7 +23,7 @@ const ProfileInfo = (props) => {
         <img src={props.profile.photos.large ? props.profile.photos.large : userNoPhoto} alt="avatar" />
         <div className={classes.profile_data}>
           <h2>{props.profile.fullName}</h2>
-          <ProfileStatus status={props.status}  
+          <ProfileStatusWithHooks status={props.status}
           updateUserStatus={props.updateUserStatus}/>
         </div>
       </div>

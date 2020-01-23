@@ -21,6 +21,7 @@ class ProfileStatus extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         //если предыдущий статус не такой как текущий статус что пришел при обновлении, то меняем
+        //синхронизируем статус в пропсах со статусом в state.
         if (prevProps.status !== this.props.status) {
             this.setState({status: this.props.status})
         }
