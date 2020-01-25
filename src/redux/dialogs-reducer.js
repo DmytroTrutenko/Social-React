@@ -1,5 +1,4 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
-
+const SEND_MESSAGE = 'DIALOGS/SEND-MESSAGE';
 
 let initialState = {
     dialogs: [{
@@ -61,7 +60,7 @@ const dialogsReducer = (state = initialState, action) => {
         case SEND_MESSAGE: {
             let newMessage = {
                 id: 1,
-                message: action.newMessageBody,
+                message: action.newMessageBody
             };
             return {
                 ...state,

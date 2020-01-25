@@ -15,7 +15,6 @@ import {compose} from "redux";
 import {initializeAPP} from "./redux/app-reduser";
 import Preloader from "./components/common/preloader/Preloader";
 
-
 class App extends React.Component {
 
     componentDidMount() {
@@ -26,7 +25,6 @@ class App extends React.Component {
         if(!this.props.initialized){
           return <Preloader/>
         }
-
         return (
             <div className='app-wrapper'>
                 <HeaderContainer/>

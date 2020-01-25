@@ -36,32 +36,3 @@
 	background: #404040;
 }
 
-.selectedPage {
-	margin-left: 3px;
-	margin-right: 3px;
-	font-weight: bold;
-	font-size: large;
-}
-
-.countPage {
-	display: flex;
-	justify-content: flex-start;
-	cursor: pointer;
-	overflow: auto;
-	height: 40px;
-    width: 200px;
-    overflow-y: hidden;
-    padding-top: 5px;
-}
-
-.countPage::-webkit-scrollbar {
-	width: 10px;
-    height: 10px;
-}
-.countPage::-webkit-scrollbar-thumb {
-    background: #000;
-    width: 20px;
-}	
-.countPage::-webkit-scrollbar-track {
-    background: transparent;
-}

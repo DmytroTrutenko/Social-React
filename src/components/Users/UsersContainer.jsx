@@ -9,40 +9,40 @@ import {getCurrentPage, getFollowingInProgress, getPageSize, getTotalUsersCount,
 
 class UsersContainer extends React.Component {
 
+
     componentDidMount() {
-        this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+        const {currentPage, pageSize, requestUsers} = this.props;
+        requestUsers(currentPage, pageSize);
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.setCurrentPage(pageNumber);
-        this.props.requestUsers(pageNumber, this.props.pageSize);
+        const {setCurrentPage, pageSize, requestUsers} = this.props;
+        setCurrentPage(pageNumber);
+        requestUsers(pageNumber, pageSize);
     };
 
     render() {
+        const {
+            isFetching, totalUsersCount,
+            pageSize, users,
+            unfollow, follow,
+            currentPage, followingInProgress
+        } = this.props;
+
         return <>
-            {this.props.isFetching ? <Preloader/> : null}
-            <Users totalUsersCount={this.props.totalUsersCount}
-                   pageSize={this.props.pageSize}
+            {isFetching ? <Preloader/> : null}
+            <Users totalUsersCount={totalUsersCount}
+                   pageSize={pageSize}
                    onPageChanged={this.onPageChanged}
-                   users={this.props.users}
-                   unfollow={this.props.unfollow}
-                   follow={this.props.follow}
-                   currentPage={this.props.currentPage}
-                   followingInProgress={this.props.followingInProgress}
+                   users={users}
+                   unfollow={unfollow}
+                   follow={follow}
+                   currentPage={currentPage}
+                   followingInProgress={followingInProgress}
             />
         </>
     }
 }
-
-// const mapStateToProps = (state) => {
-// //     return {
-// //         users: state.usersPage.users,
-// //         pageSize: state.usersPage.pageSize,
-// //         totalUsersCount: state.usersPage.totalUsersCount,
-// //         currentPage: state.usersPage.currentPage,
-// //         followingInProgress: state.usersPage.followingInProgress,
-// //     }
-// // };
 
 const mapStateToProps = (state) => {
     return {

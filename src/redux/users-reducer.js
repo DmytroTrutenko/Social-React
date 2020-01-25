@@ -1,12 +1,13 @@
-import { usersAPI } from "../api/api";
+import {usersAPI} from "../api/api";
+import {updateObjectInArray} from "../utils/helpers";
 
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET-USERS';
-const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
-const SET_TOTAL_USERS_COUNT = 'SET-TOTAL-USERS-COUNT';
-const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
-const TOGGLE_IS_FOLLOWING = 'TOGGLE_IS_FOLLOWING';
+const FOLLOW = 'USERS/FOLLOW',
+    UNFOLLOW = 'USERS/UNFOLLOW',
+    SET_USERS = 'USERS/SET-USERS',
+    SET_CURRENT_PAGE = 'USERS/SET-CURRENT-PAGE',
+    SET_TOTAL_USERS_COUNT = 'USERS/SET-TOTAL-USERS-COUNT',
+    TOGGLE_IS_FETCHING = 'USERS/TOGGLE_IS_FETCHING',
+    TOGGLE_IS_FOLLOWING = 'USERS/TOGGLE_IS_FOLLOWING';
 
 let initialState = {
     users: [],
@@ -22,30 +23,13 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW: {
             return {
                 ...state,
-                users: state.users.map(u => {
-                    if (u.id === action.userId) {
-                        return {
-                            ...u,
-                            followed: true
-                        }
-                    }
-                    return u;
-                })
-            };
+                users: updateObjectInArray(state.users, action.userId, 'id', {followed: true})
+            }
         }
         case UNFOLLOW: {
             return {
                 ...state,
-                // users: [...state.users],
-                users: state.users.map(u => {
-                    if (u.id === action.userId) {
-                        return {
-                            ...u,
-                            followed: false
-                        }
-                    }
-                    return u;
-                })
+                users: updateObjectInArray(state.users, action.userId, 'id', {followed: false})
             };
         }
         case SET_USERS: {
@@ -117,42 +101,31 @@ export const setIsFollowing = (followingInProgress, userId) => ({
     userId
 });
 
-export const requestUsers = (currentPage, pageSize) => {
-    return (dispatch) => {
-        dispatch(setIsFetching(true));
-        usersAPI.getUsers(currentPage, pageSize)
-            .then(data => {
-                dispatch(setIsFetching(false));
-                dispatch(setUsers(data.items));
-                dispatch(setTotalUsersCount(data.totalCount));
-            });
-    }
+export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
+    dispatch(setIsFetching(true));
+    let data = await usersAPI.getUsers(currentPage, pageSize);
+    dispatch(setIsFetching(false));
+    dispatch(setUsers(data.items));
+    dispatch(setTotalUsersCount(data.totalCount));
+
 };
 
-export const follow = (id) => {
-    return (dispatch) => {
-        dispatch(setIsFollowing(true, id));
-        usersAPI.followUser(id).then(data => {
-          if (data.resultCode === 0) {
-            dispatch(followSuccess(id));
-          }
-          dispatch(setIsFollowing(false, id));
-        });
+//вспомогающий метод follow unfollow
+const followUnfollowFlow = async (dispatch, id, apiMethod, actionCreator) => {
+    dispatch(setIsFollowing(true, id));
+    let data = await apiMethod(id);
+    if (data.resultCode === 0) {
+        dispatch(actionCreator(id));
     }
-};
-export const unfollow = (id) => {
-    return (dispatch) => {
-        dispatch(setIsFollowing(true, id));
-        usersAPI.unfollowUser(id).then(data => {
-          if (data.resultCode === 0) {
-            dispatch(unfollowSuccess(id));
-          }
-          dispatch(setIsFollowing(false, id));
-        });
-    }
+    dispatch(setIsFollowing(false, id));
 };
 
+export const follow = (id) => async (dispatch) => {
+    followUnfollowFlow(dispatch, id, usersAPI.followUser.bind(usersAPI), followSuccess);
+};
 
-
+export const unfollow = (id) => async (dispatch) => {
+    followUnfollowFlow(dispatch, id, usersAPI.unfollowUser.bind(usersAPI), unfollowSuccess);
+};
 
 export default usersReducer;

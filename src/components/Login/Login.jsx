@@ -1,8 +1,8 @@
 import React from 'react';
-import {Field, reduxForm} from "redux-form";
+import {reduxForm} from "redux-form";
 import classes from './Login.module.css'
 import classes2 from './../common/Forms/forms.module.css'
-import {Input} from "../common/Forms/forms";
+import {createField} from "../common/Forms/forms";
 import {maxLength, required} from "../../utils/validators/validators";
 import {login} from "../../redux/auth-reduser";
 import {connect} from "react-redux";
@@ -10,21 +10,14 @@ import {Redirect} from "react-router-dom";
 
 const maxLength30 = maxLength(30);
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
+
     return (
-        <form className={classes.loginForm} onSubmit={props.handleSubmit}>
-            <div>
-                <Field placeholder={'email'} name={'email'} component={Input}
-                       validate={[required, maxLength30]}/>
-            </div>
-            <div>
-                <Field placeholder={'password'} name={'password'} type={'password'} component={Input}
-                       validate={[required, maxLength30]}/>
-            </div>
-            <div>
-                <Field type={'checkbox'} name={'rememberMe'} component={'input'}/> remember me
-            </div>
-           {props.error ? <span className={classes2.formSummaryError}>{props.error}</span> : null}
+        <form className={classes.loginForm} onSubmit={handleSubmit}>
+            {createField('Email', 'email', "input", [required, maxLength30])}
+            {createField('Password', 'password', "input", [required, maxLength30], {type:'password'})}
+            {createField(null, 'rememberMe', "input", null, {type:'checkbox'}, 'remember me')}
+           {error ? <span className={classes2.formSummaryError}>{error}</span> : null}
             <div>
                 <button>Login</button>
             </div>
@@ -34,19 +27,19 @@ const LoginForm = (props) => {
 
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm);
 
-const Login = (props) => {
+const Login = ({login,isAuth}) => {
 //сюда приходят все данные из формы методом onSubmit
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe)
+        login(formData.email, formData.password, formData.rememberMe)
     };
-    if (props.isAuth) {
+    if (isAuth) {
         return <Redirect to={'/profile'}/>
     }
     return (<>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit}/>
             <div>
-                <p>тестовый аккаунт:</p>
+                <p>Test account:</p>
                 <h3>Email: free@samuraijs.com</h3>
                 <h3> Password: free</h3>
             </div>
