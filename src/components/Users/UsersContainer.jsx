@@ -6,10 +6,7 @@ import Preloader from '../common/preloader/Preloader';
 import {compose} from 'redux';
 import {getCurrentPage, getFollowingInProgress, getPageSize, getTotalUsersCount, getUsers} from "../../redux/users-selector";
 
-
 class UsersContainer extends React.Component {
-
-
     componentDidMount() {
         const {currentPage, pageSize, requestUsers} = this.props;
         requestUsers(currentPage, pageSize);

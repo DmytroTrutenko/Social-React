@@ -24,10 +24,10 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
             : null}
         {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
             .map(p => {
-                return <span className={currentPage === p ? classes.selectedPage : null}
+                return <span className={currentPage === p ? classes.selectedPage : classes.pageNumber}
                              onClick={(e) => {
                                  onPageChanged(p);
-                             }}>{p}. </span>
+                             }}>{p} </span>
             })}
         {portionCount > portionNumber
             ? <button onClick={() => {
