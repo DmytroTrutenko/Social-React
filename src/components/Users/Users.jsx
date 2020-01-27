@@ -10,7 +10,7 @@ const Users = ({
 
     return <div className={classes.uwrap}>
         <Paginator
-            totalUsersCount={totalUsersCount}
+            totalItemsCount={totalUsersCount}
             pageSize={pageSize}
             currentPage={currentPage}
             onPageChanged={onPageChanged}

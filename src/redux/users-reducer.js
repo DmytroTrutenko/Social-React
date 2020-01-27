@@ -11,7 +11,7 @@ const FOLLOW = 'USERS/FOLLOW',
 
 let initialState = {
     users: [],
-    pageSize: 8,
+    pageSize: 10,
     totalUsersCount: 0,
     currentPage: 4,
     isFetching: false,

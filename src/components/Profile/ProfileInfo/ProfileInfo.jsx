@@ -45,7 +45,6 @@ const ProfileInfo = (props) => {
               className={classes.icons}
               icon={faGlobe}
             />
-
           </a></li>
           <li><a href={props.profile.contacts.vk != null && props.profile.contacts.vk.indexOf('https://') === 0
             ? props.profile.contacts.vk : 'https://' + props.profile.contacts.vk}>
