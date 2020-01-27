@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Social-React/static/css/main.85b969e4.chunk.css",
-    "main.js": "/Social-React/static/js/main.2876ceb4.chunk.js",
-    "main.js.map": "/Social-React/static/js/main.2876ceb4.chunk.js.map",
+    "main.js": "/Social-React/static/js/main.017e2fcc.chunk.js",
+    "main.js.map": "/Social-React/static/js/main.017e2fcc.chunk.js.map",
     "runtime-main.js": "/Social-React/static/js/runtime-main.2f333c66.js",
     "runtime-main.js.map": "/Social-React/static/js/runtime-main.2f333c66.js.map",
     "static/css/2.764ccc25.chunk.css": "/Social-React/static/css/2.764ccc25.chunk.css",
@@ -18,7 +18,7 @@
     "static/js/5.f84e8fcd.chunk.js": "/Social-React/static/js/5.f84e8fcd.chunk.js",
     "static/js/5.f84e8fcd.chunk.js.map": "/Social-React/static/js/5.f84e8fcd.chunk.js.map",
     "index.html": "/Social-React/index.html",
-    "precache-manifest.4cfc988e2f84966765b277e7b6545ca6.js": "/Social-React/precache-manifest.4cfc988e2f84966765b277e7b6545ca6.js",
+    "precache-manifest.a08cf632041e565cf10901914590b5ee.js": "/Social-React/precache-manifest.a08cf632041e565cf10901914590b5ee.js",
     "service-worker.js": "/Social-React/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/Social-React/static/css/2.764ccc25.chunk.css.map",
     "static/css/3.2b283795.chunk.css.map": "/Social-React/static/css/3.2b283795.chunk.css.map",
@@ -34,6 +34,6 @@
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.0b547c4e.chunk.js",
     "static/css/main.85b969e4.chunk.css",
-    "static/js/main.2876ceb4.chunk.js"
+    "static/js/main.017e2fcc.chunk.js"
   ]
 }
