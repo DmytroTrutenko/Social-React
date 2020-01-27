@@ -40,8 +40,8 @@ const Login = ({login,isAuth}) => {
             <LoginReduxForm onSubmit={onSubmit}/>
             <div>
                 <p>Test account:</p>
-                <h3>Email: free@samuraijs.com</h3>
-                <h3> Password: free</h3>
+                <h3>Email: testreact@mail.ru</h3>
+                <h3>Password: TesterDuck</h3>
             </div>
         </>
     );
