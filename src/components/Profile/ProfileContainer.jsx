@@ -2,7 +2,7 @@ import React from 'react';
 import Profile from './Profile';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {setProfile, getUserStatus, updateUserStatus, savePhoto} from '../../redux/profile-reducer';
+import {setProfile, getUserStatus, updateUserStatus, savePhoto, saveProfile} from '../../redux/profile-reducer';
 import {compose} from 'redux';
 
 
@@ -37,6 +37,7 @@ class ProfileContainer extends React.Component {
                         updateUserStatus={this.props.updateUserStatus}
                         isOwner={!this.props.match.params.userId}
                         savePhoto ={this.props.savePhoto}
+                        saveProfile ={this.props.saveProfile}
         />
     }
 }
@@ -50,28 +51,7 @@ const mapStateToProps = (state) => {
     }
 };
 
-
-//как работает диспатч
-// const mapDispatchToProps = (dispatch) => {ы
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId));
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId));
-//         }
-//     }
-// }
-
-// let AuthRedirectComponent = withAuthRedirect(ProfileContainer);  
-// let withUrlDataContainerComponent = withRouter(AuthRedirectComponent); //прокидываем URL в Profile
-// //связь Profile и Store
-// export default connect(mapStateToProps, { setProfile })(withUrlDataContainerComponent); 
-
-
-//функция compose вызывает конвеер функций для начальной какой-то компоненты.
-//вызываются функции снизу вверх
 export default compose(
-    connect(mapStateToProps, {setProfile, getUserStatus, updateUserStatus, savePhoto}),
+    connect(mapStateToProps, {setProfile, getUserStatus, updateUserStatus, savePhoto, saveProfile}),
     withRouter
 )(ProfileContainer); 

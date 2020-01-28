@@ -2,7 +2,7 @@ import React from 'react';
 import {reduxForm} from "redux-form";
 import classes from './Login.module.css'
 import classes2 from './../common/Forms/forms.module.css'
-import {createField} from "../common/Forms/forms";
+import {createField, Input} from "../common/Forms/forms";
 import {maxLength, required} from "../../utils/validators/validators";
 import {login} from "../../redux/auth-reduser";
 import {connect} from "react-redux";
@@ -14,9 +14,9 @@ const LoginForm = ({handleSubmit, error}) => {
 
     return (
         <form className={classes.loginForm} onSubmit={handleSubmit}>
-            {createField('Email', 'email', "input", [required, maxLength30])}
-            {createField('Password', 'password', "input", [required, maxLength30], {type:'password'})}
-            {createField(null, 'rememberMe', "input", null, {type:'checkbox'}, 'remember me')}
+            {createField('Email', 'email', Input, [required, maxLength30])}
+            {createField('Password', 'password', Input, [required, maxLength30], {type:'password'})}
+            {createField(null, 'rememberMe', Input, null, {type:'checkbox'}, 'remember me')}
            {error ? <span className={classes2.formSummaryError}>{error}</span> : null}
             <div>
                 <button>Login</button>
