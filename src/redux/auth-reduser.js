@@ -1,5 +1,6 @@
 import {authAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
+import React from "react";
 
 const SET_USER_DATA = 'AUTH/SET_USER_DATA';
 

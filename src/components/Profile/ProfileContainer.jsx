@@ -2,17 +2,17 @@ import React from 'react';
 import Profile from './Profile';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {setProfile, getUserStatus, updateUserStatus} from '../../redux/profile-reducer';
+import {setProfile, getUserStatus, updateUserStatus, savePhoto} from '../../redux/profile-reducer';
 import {compose} from 'redux';
 
 
 class ProfileContainer extends React.Component {
 
-    componentDidMount() {
+    refreshProfile() {
         let profileId = this.props.match.params.userId;
         if (!profileId) {
             profileId = this.props.authorizedUserId;
-            if(!profileId){
+            if (!profileId) {
                 this.props.history.push('/login');
             }
         }
@@ -20,11 +20,24 @@ class ProfileContainer extends React.Component {
         this.props.getUserStatus(profileId);
     }
 
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.match.params.userId !== prevProps.match.params.userId) {
+            this.refreshProfile()
+        }
+    }
+
     render() {
         return <Profile {...this.props}
                         profile={this.props.profile}
                         status={this.props.status}
-                        updateUserStatus={this.props.updateUserStatus}/>
+                        updateUserStatus={this.props.updateUserStatus}
+                        isOwner={!this.props.match.params.userId}
+                        savePhoto ={this.props.savePhoto}
+        />
     }
 }
 
@@ -59,6 +72,6 @@ const mapStateToProps = (state) => {
 //функция compose вызывает конвеер функций для начальной какой-то компоненты.
 //вызываются функции снизу вверх
 export default compose(
-    connect(mapStateToProps, {setProfile, getUserStatus, updateUserStatus}),
+    connect(mapStateToProps, {setProfile, getUserStatus, updateUserStatus, savePhoto}),
     withRouter
 )(ProfileContainer); 
