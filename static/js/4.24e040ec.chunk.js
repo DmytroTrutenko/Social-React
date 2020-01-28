@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-kabzda-1"]=this["webpackJsonpreact-kabzda-1"]||[]).push([[4],{302:function(e,a,n){},305:function(e,a,n){"use strict";n.r(a);var t=n(0),c=n.n(t);n(302);a.default=function(){return c.a.createElement("div",null,c.a.createElement("span",null,"News"))}}}]);
+//# sourceMappingURL=4.24e040ec.chunk.js.map
